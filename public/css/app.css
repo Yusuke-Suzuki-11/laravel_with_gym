@@ -39,12 +39,41 @@
   color: rgba(0, 0, 0, 0.296);
 }
 
+.auth-container {
+  background-color: #F4FBFE;
+  height: 750px;
+}
+
+.auth-container .login-main {
+  height: 150px;
+}
+
+.auth-container .login-main h1 {
+  text-align: center;
+  padding-top: 100px;
+}
+
+.auth-form-box {
+  background-color: rgba(143, 225, 255, 0.644);
+  width: 500px;
+  height: 500px;
+  margin: 0 auto;
+}
+
+.auth-form-box .auth-form-start {
+  width: 90%;
+  margin: 0 auto;
+}
+
 html {
-  background-color: antiquewhite;
   font-family: "M PLUS 1p";
 }
 
 body {
+  margin: 0;
+}
+
+h1 {
   margin: 0;
 }
 

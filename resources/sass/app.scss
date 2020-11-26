@@ -1,9 +1,14 @@
 @import "elements/header";
+@import "auth";
 
 html{
-	background-color: antiquewhite;
 	font-family: "M PLUS 1p";
 }
 body{
 	margin:0;
 }
+
+h1{
+	margin:0;
+}
+

@@ -1,0 +1,27 @@
+.auth-container{
+	background-color: #F4FBFE;
+	height: 750px;
+
+	.login-main{
+		height: 150px;
+
+		h1{
+			text-align: center;
+
+			padding-top: 100px;
+		}
+	}
+}
+
+
+.auth-form-box{
+	background-color: rgba(143, 225, 255, 0.644);
+	width: 500px;
+	height: 500px;
+	margin: 0 auto;
+
+	.auth-form-start{
+		width: 90%;
+		margin: 0 auto;
+	}
+}

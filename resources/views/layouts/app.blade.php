@@ -13,6 +13,8 @@
 </head>
 <body>
 	@include('elements/header')
+
 	@yield('content')
+	
 </body>
 </html>
