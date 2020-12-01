@@ -2,14 +2,16 @@
 	<div class="header-top">
 
 		<div class="header-logo">
-			<img src="image/main_logo.png" alt="main_logo">
+			<a href={{route('home')}}>
+				<img src="/image/main_logo.png" alt="main_logo">
+			</a>
 		</div>
 
 		<div class="header-menue">
 			@if( Auth::check() )
 			<ul>
 				<li>
-					<a href="#">ログアウト</a>
+					<a href={{route('user.edit',['id' => Auth::user()->id])}}>アカウント設定</a>
 				</li>
 				<li>
 					<a href="#">ログアウト</a>
@@ -27,7 +29,7 @@
 					<a href="#">スケジュール</a>
 				</li>
 				<li>
-					<a href="#">ログイン</a>
+					<a href={{route('login')}}>ログイン</a>
 				</li>
 			</ul>
 			@endif
