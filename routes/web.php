@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+	return view('welcome');
 });
 
 Auth::routes();
@@ -21,10 +21,14 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 Route::group(['prefix' => 'user', 'middleware' => 'auth'], function () {
-    Route::get('/index', 'UsersController@index')->name('user.index');
-    Route::get('/show/{id}', 'UsersController@show')->name('user.show');
-    Route::get('/edit/{id}', 'UsersController@edit')->name('user.edit');
-    Route::post('/update/{id}', 'UsersController@update')->name('user.update');
-    Route::get('/new', 'UsersController@new')->name('user.new');
-    Route::post('/store', 'UsersController@store')->name('user.store');
+	Route::get('/index', 'UsersController@index')->name('user.index');
+	Route::get('/show/{id}', 'UsersController@show')->name('user.show');
+	Route::get('/edit/{id}', 'UsersController@edit')->name('user.edit');
+	Route::post('/update/{id}', 'UsersController@update')->name('user.update');
+	Route::get('/new', 'UsersController@new')->name('user.new');
+	Route::post('/store', 'UsersController@store')->name('user.store');
+});
+
+Route::group(['prefix' => 'lesson', 'middleware' => 'auth'], function () {
+	Route::get('/index', 'LessonController@index')->name('lesson.index');
 });
