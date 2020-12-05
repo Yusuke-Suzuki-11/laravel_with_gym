@@ -11,7 +11,10 @@
 			@if( Auth::check() )
 			<ul>
 				<li>
-					<a href={{route('user.edit',['id' => Auth::user()->id])}}>アカウント設定</a>
+					<a href={{route('user.new')}}>アカウントの作成</a>
+				</li>
+				<li>
+					<a href={{route('lesson.new')}}>レッスンの作成</a>
 				</li>
 				<li>
 					<a href="#">ログアウト</a>

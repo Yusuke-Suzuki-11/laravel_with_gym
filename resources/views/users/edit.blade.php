@@ -25,10 +25,11 @@
 			<br>
 
 			クラスを登録する
-			@if ($UserRow->lessons())
+			<?php $LessonRowset = $UserRow->lessons()?>
+			@if ($LessonRowset)
 				現在登録しているクラス
-				@foreach ($collection as $item)
-
+				@foreach ($LessonRowset as $item)
+					{{$item->}}
 				@endforeach
 			@endif
 			<br>

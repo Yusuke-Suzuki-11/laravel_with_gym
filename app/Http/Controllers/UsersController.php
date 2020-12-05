@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\User;
 use App\Lesson;
 use App\LessonUser;
+use Illuminate\Support\Facades\Hash;
 
 class UsersController extends Controller
 {
@@ -73,7 +74,11 @@ class UsersController extends Controller
 		$UserRow = new User;
 		$UserRow->name = $request->name;
 		$UserRow->email = $request->email;
-		$UserRow->password = $request->email;
+		$UserRow->birth_day = $request->brDay;
+		$UserRow->members_path = $request->membersId;
+		$UserRow->gender = $request->gender;
+		$UserRow->difficulty_point = $request->difficulty_point;
+		$UserRow->password = Hash::make($request->password);
 		$UserRow->save();
 
 		$lessonId = Lesson::where('age_type', $request->ageType)
