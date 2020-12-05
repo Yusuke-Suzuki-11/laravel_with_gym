@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\User;
+use App\Lesson;
+use App\LessonUser;
 
 class UsersController extends Controller
 {
@@ -44,8 +46,18 @@ class UsersController extends Controller
 		$UserRow->difficulty_point = $request->difficulty_point;
 		$UserRow->save();
 
+		$lessonId = Lesson::where('age_type', $request->ageType)
+			->where('lessons_time_type', $request->lessonsTimeType)
+			->where('week_type', $request->weekDay)
+			->first(['id'])
+			;
+		//追加していく処理なので、変更したい場合に別ページでしてあげた方が良いかも
+		$lessonId = $lessonId->id;
+		$UserRow->lessons()->attach($lessonId);
 
-		return redirect(route('user.show', ['id' => $id]))->with('UserRow', $UserRow );
+
+
+		return redirect(route('user.show', ['id' => $id]))->with('UserRow', $UserRow);
 	}
 
 	public function new()
@@ -63,6 +75,14 @@ class UsersController extends Controller
 		$UserRow->email = $request->email;
 		$UserRow->password = $request->email;
 		$UserRow->save();
+
+		$lessonId = Lesson::where('age_type', $request->ageType)
+			->where('lessons_time_type', $request->lessonsTimeType)
+			->where('week_type', $request->weekDay)
+			->first(['id'])
+			;
+		$lessonId = $lessonId->id;
+		$UserRow->lessons()->attach($lessonId);
 
 		return redirect(route('user.show', ['id' => $UserRow->id]))->with('UserRow', $UserRow );
 	}
