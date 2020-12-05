@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-		<form action="{{ route('lesson.store') }}" accept-charset="UTF-8" method="post" class="auth-form-start" novalidate>
+アップデーと
+		<form action="{{ route('lesson.update',['id' => $LessonRow->id]) }}" accept-charset="UTF-8" method="post" class="auth-form-start" novalidate>
 			@csrf
 			クラス
 			<select name="ageType">

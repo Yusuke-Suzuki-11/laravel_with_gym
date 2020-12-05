@@ -15,12 +15,11 @@ class CreateLessonsTable extends Migration
 	{
 		Schema::create('lessons', function (Blueprint $table) {
 			$table->bigIncrements('id');
-			$table->string('name');
+			$table->integer('age_type');
+			$table->integer('week_type');
 			$table->integer('capacity_person');
 			$table->integer('capacity_difficulty_point');
 			$table->integer('lessons_time_type');
-			$table->unsignedBigInteger('user_id');
-			$table->foreign('user_id')->references('id')->on('users');
 			$table->timestamps();
 		});
 	}

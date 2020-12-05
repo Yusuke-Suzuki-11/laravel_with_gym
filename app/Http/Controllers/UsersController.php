@@ -25,6 +25,7 @@ class UsersController extends Controller
 	{
 		$UserRow = User::find($id);
 
+
 		if(Auth::user()->user_type != 1){
 			abort(404);
 		}
@@ -38,7 +39,7 @@ class UsersController extends Controller
 		$UserRow->name = $request->name;
 		$UserRow->email = $request->email;
 		$UserRow->birth_day = $request->brDay;
-		$UserRow->members_id = $request->membersId;
+		$UserRow->members_path = $request->membersId;
 		$UserRow->gender = $request->gender;
 		$UserRow->difficulty_point = $request->difficulty_point;
 		$UserRow->save();

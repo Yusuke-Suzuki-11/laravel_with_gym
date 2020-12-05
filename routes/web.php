@@ -31,4 +31,9 @@ Route::group(['prefix' => 'user', 'middleware' => 'auth'], function () {
 
 Route::group(['prefix' => 'lesson', 'middleware' => 'auth'], function () {
 	Route::get('/index', 'LessonController@index')->name('lesson.index');
+	Route::get('/new', 'LessonController@new')->name('lesson.new');
+	Route::post('/store', 'LessonController@store')->name('lesson.store');
+	Route::get('/show/{id}', 'LessonController@show')->name('lesson.show');
+	Route::get('/edit/{id}', 'LessonController@edit')->name('lesson.edit');
+	Route::post('/update/{id}', 'LessonController@update')->name('lesson.update');
 });

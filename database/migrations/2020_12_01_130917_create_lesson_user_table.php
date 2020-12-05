@@ -15,11 +15,10 @@ class CreateLessonUserTable extends Migration
 	{
 		Schema::create('lesson_user', function (Blueprint $table) {
 			$table->bigIncrements('id');
-			$table->unsignedInteger('lesson_id');
-			$table->unsignedInteger('user_id');
-			$table->primary(['lesson_id','user_id']);
-			$table->foreign('lesson_id')->references('id')->on('users');
-			$table->foreign('user_id')->references('id')->on('lessons');
+			$table->unsignedBigInteger('user_id');
+			$table->unsignedBigInteger('lesson_id');
+			$table->foreign('lesson_id')->references('id')->on('lessons');
+			$table->foreign('user_id')->references('id')->on('users');
 		});
 	}
 
