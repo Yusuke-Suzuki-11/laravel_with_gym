@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Lesson;
 use Illuminate\Support\Facades\Auth;
+use App\Helpers\PracticeHelper;
 
 class LessonController extends Controller
 {
@@ -15,6 +16,9 @@ class LessonController extends Controller
 
 	public function new()
 	{
+		PracticeHelper::test();
+		exit;
+
 		if(Auth::user()->user_type != 1){
 			abort(404);
 		}

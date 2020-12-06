@@ -13,6 +13,7 @@
         "laravel/framework": "^6.20",
         "laravel/tinker": "^2.5",
         "laravel/ui": "^1.0",
+        "nesbot/carbon": "^2.42",
         "panique/laravel-sass": "dev-master"
     },
     "require-dev": {
